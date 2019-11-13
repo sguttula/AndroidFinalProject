@@ -7,4 +7,12 @@
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
     <color name="soft_black">#7f7f7f</color>
+    <color name="btn">#03A9F4</color>
+    <color name="btn2">#542196F3</color>
+    <color name="transwhite">#C8FFFFFF</color>
+    <color name="back2">#00BCD4</color>
+    <color name="red">#F44336</color>
+    <color name="btn3">#3F51B5</color>
+    <color name="moneygreen">#5ec639</color>
+    <color name="moneyblue">#005eff</color>
 </resources>

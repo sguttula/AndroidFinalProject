@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/provider_icon" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/forgotPass"
         android:text="Company Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
