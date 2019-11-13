@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_provider"
+    app:startDestination="@id/providersOrdersFragment">
+    <fragment
+        android:id="@+id/providersOrdersFragment"
+        android:name="com.example.myfinalproject.ProvidersOrdersFragment"
+        android:label="Orders"
+        tools:layout="@layout/fragment_providers_orders" />
+    <fragment
+        android:id="@+id/myCashFragment"
+        android:name="com.example.myfinalproject.MyCashFragment"
+        android:label="MyCash"
+        tools:layout="@layout/fragment_my_cash" />
+    <fragment
+        android:id="@+id/providersSettingsFragment2"
+        android:name="com.example.myfinalproject.ProvidersSettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_providers_settings" />
+    <fragment
+        android:id="@+id/logOutFragment2"
+        android:name="com.example.myfinalproject.LogOutFragment"
+        android:label="fragment_log_out"
+        tools:layout="@layout/fragment_log_out" />
+</navigation>

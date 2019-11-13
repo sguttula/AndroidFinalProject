@@ -6,4 +6,5 @@
     <color name="topbar">#5ACAF2</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+    <color name="soft_black">#7f7f7f</color>
 </resources>
