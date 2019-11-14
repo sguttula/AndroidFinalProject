@@ -61,7 +61,7 @@
                         android:selectAllOnFocus="false" />
 
                     <EditText
-                        android:id="@+id/password"
+                        android:id="@+id/newPass"
                         android:layout_width="match_parent"
                         android:layout_height="35dp"
                         android:layout_marginLeft="50dp"
@@ -74,7 +74,7 @@
 
                     <TextView
                         android:id="@+id/errorTxt"
-                        android:text="Error"
+                        android:text="Sign Up failed. Try again!"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="30sp"

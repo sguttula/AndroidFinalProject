@@ -33,7 +33,7 @@ class ProviderSignUpFragment : Fragment() {
         binding.continueBtn.setOnClickListener {
             val pref = "provider"
             val myEmail = pref.plus("-").plus(binding.email.text)
-            signUp(myEmail,binding.password.toString())
+            signUp(myEmail,binding.newPass.text.toString())
         }
 
         return binding.root

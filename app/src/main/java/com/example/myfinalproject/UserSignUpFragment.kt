@@ -32,7 +32,7 @@ class UserSignUpFragment : Fragment() {
         binding.continueBtn.setOnClickListener {
             val pref = "user"
             val myEmail = pref.plus("-").plus(binding.email.text)
-            signUp(myEmail,binding.password.toString())
+            signUp(myEmail, binding.newPass.text.toString())
         }
 
         return binding.root
@@ -40,7 +40,6 @@ class UserSignUpFragment : Fragment() {
 
     private fun signUp(email:String, password: String)
     {
-//        binding.errorTxt.text = "INSIDE"
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
