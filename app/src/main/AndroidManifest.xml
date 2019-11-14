@@ -19,11 +19,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".AuthenticationActivity"
-            android:theme="@style/loginTheme"/>
+            android:theme="@style/loginTheme"
+            android:noHistory="true"/>
         <activity android:name=".MainActivity"
-            android:theme="@style/mainTheme"/>
+            android:theme="@style/mainTheme"
+            android:noHistory="true"/>
         <activity android:name=".ProvidersMainActivity"
-            android:theme="@style/mainTheme_Providers"/>
+            android:theme="@style/mainTheme_Providers"
+            android:noHistory="true"/>
     </application>
 
 </manifest>

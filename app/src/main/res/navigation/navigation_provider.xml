@@ -21,7 +21,5 @@
         tools:layout="@layout/fragment_providers_settings" />
     <fragment
         android:id="@+id/logOutFragment2"
-        android:name="com.example.myfinalproject.LogOutFragment"
-        android:label="fragment_log_out"
-        tools:layout="@layout/fragment_log_out" />
+        android:name="com.example.myfinalproject.LogOutFragment" />
 </navigation>

@@ -11,20 +11,27 @@
         android:label="fragment_log_in"
         tools:layout="@layout/fragment_log_in" >
         <action
-            android:id="@+id/action_logInFragment_to_singUpFragment"
-            app:destination="@id/singUpFragment" />
-        <action
             android:id="@+id/action_logInFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment" />
+        <action
+            android:id="@+id/action_logInFragment_to_userSignUpFragment"
+            app:destination="@id/userSignUpFragment" />
+        <action
+            android:id="@+id/action_logInFragment_to_providerSignUpFragment"
+            app:destination="@id/providerSignUpFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/singUpFragment"
-        android:name="com.example.myfinalproject.SingUpFragment"
-        android:label="fragment_sing_up"
-        tools:layout="@layout/fragment_sing_up" />
     <fragment
         android:id="@+id/forgotPasswordFragment"
         android:name="com.example.myfinalproject.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password" />
+    <fragment
+        android:id="@+id/userSignUpFragment"
+        android:name="com.example.myfinalproject.UserSignUpFragment"
+        android:label="fragment_sing_up"
+        tools:layout="@layout/fragment_sing_up" />
+    <fragment
+        android:id="@+id/providerSignUpFragment"
+        android:name="com.example.myfinalproject.ProviderSignUpFragment"
+        android:label="ProviderSignUpFragment" />
 </navigation>

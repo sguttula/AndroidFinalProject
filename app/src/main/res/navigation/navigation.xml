@@ -33,6 +33,5 @@
     <fragment
         android:id="@+id/logOutFragment"
         android:name="com.example.myfinalproject.LogOutFragment"
-        android:label="fragment_log_out"
-        tools:layout="@layout/fragment_log_out" />
+        android:label="fragment_log_out" />
 </navigation>
