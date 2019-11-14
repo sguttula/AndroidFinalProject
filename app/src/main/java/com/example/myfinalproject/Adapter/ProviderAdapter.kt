@@ -17,19 +17,18 @@ class ProviderAdapter (private var mContext: Context,
                        private var isFragment: Boolean = false): RecyclerView.Adapter<ProviderAdapter.ViewHolder>()
 {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProviderAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val view = LayoutInflater.from(mContext).inflate(R.layout.provider_item_layout, parent, false)
-           return ProviderAdapter.ViewHolder(view)
+           return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int {
 
-        return  mProvider.size
+    //to return the size of the mProvider list
+    override fun getItemCount(): Int = mProvider.size
 
-    }
-
-    override fun onBindViewHolder(holder: ProviderAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val provider = mProvider[position]
+
         holder.userNameProvider.text = provider.getProvidername()
         holder.fullNameProvider.text = provider.getProviderfullname()
         holder.emailProvider.text = provider.getProvideremail()
@@ -37,11 +36,15 @@ class ProviderAdapter (private var mContext: Context,
     }
 
     class ViewHolder(@NonNull itemView: View): RecyclerView.ViewHolder(itemView){
+
         var userNameProvider: TextView = itemView.findViewById(R.id.provider_username)
         var fullNameProvider:TextView  = itemView.findViewById(R.id.provider_fullname)
         var emailProvider: TextView  = itemView.findViewById(R.id.provider_email)
         var washType: TextView  = itemView.findViewById(R.id.wash_type)
         var bookButton: Button = itemView.findViewById(R.id.bookwash_button)
+
+
+
     }
 
 

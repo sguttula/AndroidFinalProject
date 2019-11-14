@@ -8,35 +8,6 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:549219030794:android:240c98be1529211e270cf3",
-        "android_client_info": {
-          "package_name": "com.example.mycarwash"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "549219030794-1tcsqltm1pmaqfbbg7beed3vp6qabui3.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAMoy9abTb9AwFZabIqbYhbhPtIqh6oEX4"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "549219030794-1tcsqltm1pmaqfbbg7beed3vp6qabui3.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:549219030794:android:ce4d1843e8ed0f39270cf3",
         "android_client_info": {
           "package_name": "com.example.myfinalproject"
