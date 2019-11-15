@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.example.myfinalproject.databinding.FragmentSingUpBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -26,26 +27,29 @@ class UserSignUpFragment : Fragment() {
 
         auth = FirebaseAuth.getInstance()
 
+
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_sing_up, container, false )
+        binding.progressBar.setVisibility(View.GONE)
 
         binding.continueBtn.setOnClickListener {
             val pref = "user"
             val myEmail = pref.plus("-").plus(binding.email.text)
-            signUp(myEmail, binding.newPass.text.toString())
+            binding.progressBar.setVisibility(View.VISIBLE)
+            signUp(myEmail, binding.newPass.text.toString(), it)
         }
 
         return binding.root
     }
 
-    private fun signUp(email:String, password: String)
+    private fun signUp(email:String, password: String, view: View)
     {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    val intent = Intent (getActivity(), MainActivity::class.java)
-                    getActivity()?.startActivity(intent)
+                    view.findNavController().navigate(R.id.action_userSignUpFragment_to_userSignUpInfot)
                 } else {
+                    binding.progressBar.setVisibility(View.GONE)
                     binding.errorTxt.setVisibility(View.VISIBLE)
                 }
             }

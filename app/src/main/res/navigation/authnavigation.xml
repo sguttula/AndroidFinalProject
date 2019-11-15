@@ -29,9 +29,25 @@
         android:id="@+id/userSignUpFragment"
         android:name="com.example.myfinalproject.UserSignUpFragment"
         android:label="fragment_sing_up"
-        tools:layout="@layout/fragment_sing_up" />
+        tools:layout="@layout/fragment_sing_up" >
+        <action
+            android:id="@+id/action_userSignUpFragment_to_userSignUpInfot"
+            app:destination="@id/userSignUpInfot" />
+    </fragment>
     <fragment
         android:id="@+id/providerSignUpFragment"
         android:name="com.example.myfinalproject.ProviderSignUpFragment"
-        android:label="ProviderSignUpFragment" />
+        android:label="ProviderSignUpFragment" >
+        <action
+            android:id="@+id/action_providerSignUpFragment_to_providerSignUpInfoSignUpInfot"
+            app:destination="@id/providerSignUpInfoSignUpInfot" />
+    </fragment>
+    <fragment
+        android:id="@+id/userSignUpInfot"
+        android:name="com.example.myfinalproject.UserSignUpInfot"
+        android:label="UserSignUpInfot" />
+    <fragment
+        android:id="@+id/providerSignUpInfoSignUpInfot"
+        android:name="com.example.myfinalproject.ProviderSignUpInfoSignUpInfot"
+        android:label="ProviderSignUpInfoSignUpInfot" />
 </navigation>

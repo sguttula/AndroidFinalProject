@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".AuthenticationActivity"
             android:theme="@style/loginTheme"
-            android:noHistory="true"/>
+            android:noHistory="true"
+            android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".MainActivity"
             android:theme="@style/mainTheme"
             android:noHistory="true"/>
