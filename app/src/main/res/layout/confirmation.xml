@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        tools:context=".ConfirmationActivity">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            tools:context=".ConfirmationActivity">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@android:color/white"
+                tools:context=".ConfirmationActivity">
+
+
+                <TextView
+                    android:id="@+id/textViewOrderStatus"
+                    android:layout_width="387dp"
+                    android:layout_height="45dp"
+                    android:text="Order Status:"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="96dp"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="12dp"
+                    tools:layout_editor_absoluteY="176dp" />
+
+                <TextView
+                    android:id="@+id/textViewOrderMessage"
+                    android:layout_width="387dp"
+                    android:layout_height="75dp"
+                    android:text="Your order was placed successfully. We will send it to the provider. We will send an email to you when he confirms the order."
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="18dp"
+                    android:textStyle="normal"
+                    android:layout_marginTop="24dp"
+                    tools:layout_editor_absoluteX="12dp"
+                    tools:layout_editor_absoluteY="247dp" />
+
+                <TextView
+                    android:id="@+id/textViewConfirmation"
+                    android:layout_width="387dp"
+                    android:layout_height="wrap_content"
+                    android:text="Confirmation:"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="18dp"
+                    android:textStyle="normal"
+                    android:layout_marginTop="18dp"
+                    tools:layout_editor_absoluteX="12dp"
+                    tools:layout_editor_absoluteY="328dp" />
+
+                <TextView
+                    android:id="@+id/textViewConfirmationNumber"
+                    android:layout_width="387dp"
+                    android:layout_height="45dp"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textColor="@color/red"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="18dp"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="359dp" />
+
+                <Button
+                    android:id="@+id/buttonGoBackHome"
+                    android:layout_width="387dp"
+                    android:layout_height="wrap_content"
+                    android:text="Go Back Home"
+                    android:textColor="@android:color/white"
+                    android:background="@color/moneyblue"
+                    android:textAlignment="center"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="48dp"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="435dp" />
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
