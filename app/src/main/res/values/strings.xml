@@ -7,4 +7,5 @@
     <string name="hello_map_frag">hello map frag</string>
     <string name="user">User</string>
     <string name="provider">Provider</string>
+    <string name="reset">Enter an email to reset your password</string>
 </resources>

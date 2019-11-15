@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 /**
@@ -16,6 +17,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 class ProviderSignUpInfoSignUpInfot : Fragment() {
 
     private  lateinit var binding: FragmentSignUpInfoBinding
+    private lateinit var auth: FirebaseAuth
     // Access a Cloud Firestore instance from your Activity
     private val db = FirebaseFirestore.getInstance()
 
@@ -49,17 +51,70 @@ class ProviderSignUpInfoSignUpInfot : Fragment() {
 
     private fun register(newUser:HashMap<String,String>)
     {
-        // Add a new document with a generated ID
-        db.collection("Poviders")
-            .add(newUser)
-            .addOnSuccessListener {
-                val intent = Intent (getActivity(), ProvidersMainActivity::class.java)
-                getActivity()?.startActivity(intent)
+
+        var currentUserEmail = FirebaseAuth.getInstance().currentUser?.email
+        //creates new user type
+        db.collection("userType")
+            .whereEqualTo("Email", currentUserEmail)
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    var temp = document.get("type").toString()
+                    var docId = document.id
+                    if(temp.equals("user")){
+                        // Add a new document with a generated ID
+                        db.collection("Providers")
+                            .add(newUser)
+                            .addOnSuccessListener {
+                                val docRef = db.collection("userType").document(docId)
+                                db.runTransaction { transaction ->
+                                    transaction.update(docRef, "type", "master")
+                                    transaction.update(docRef, "current", "provider")
+                                }.addOnSuccessListener { result ->
+                                    val intent = Intent (getActivity(), ProvidersMainActivity::class.java)
+                                    getActivity()?.startActivity(intent)
+                                }.addOnFailureListener { e ->
+                                    binding.progressBar.setVisibility(View.GONE)
+                                    binding.errorTxt.setVisibility(View.VISIBLE)
+                                }
+                            }
+                            .addOnFailureListener {
+                                binding.progressBar.setVisibility(View.GONE)
+                                binding.errorTxt.setVisibility(View.VISIBLE)
+                            }
+                    }
+
+                }
+            }.addOnFailureListener {
+                //creates new user type
+                val newUserType = hashMapOf(
+                    "Email" to currentUserEmail,
+                    "current" to "provider",
+                    "type" to "provider"
+                )
+
+                db.collection("Providers")
+                    .add(newUser)
+                    .addOnSuccessListener {
+                        db.collection("userType")
+                            .add(newUserType)
+                            .addOnSuccessListener {
+                                val intent = Intent (getActivity(), ProvidersMainActivity::class.java)
+                                getActivity()?.startActivity(intent)
+                            }
+                            .addOnFailureListener {
+                                binding.progressBar.setVisibility(View.GONE)
+                                binding.errorTxt.setVisibility(View.VISIBLE)
+                            }
+                    }
+                    .addOnFailureListener {
+                        binding.progressBar.setVisibility(View.GONE)
+                        binding.errorTxt.setVisibility(View.VISIBLE)
+                    }
             }
-            .addOnFailureListener {
-                binding.progressBar.setVisibility(View.GONE)
-                binding.errorTxt.setVisibility(View.VISIBLE)
-            }
+
+
+
     }
 
 
