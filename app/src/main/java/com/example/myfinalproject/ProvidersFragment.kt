@@ -68,6 +68,8 @@ class ProvidersFragment : Fragment() {
                    recyclerView.visibility = View.VISIBLE
 
                    retrieveUsers()
+
+
                    searchProvider(p0.toString().toLowerCase())
                }
             }
